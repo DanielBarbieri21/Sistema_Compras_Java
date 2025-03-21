@@ -138,11 +138,11 @@ public class MainFrame extends JFrame {
         filterButton.addActionListener(e -> filterItems());
         rightPanel.add(filterButton);
 
-        rightPanel.add(new JLabel("Fornecedor para Exportar Excel:"));
+        rightPanel.add(new JLabel("Exportar Pedido Excel:"));
         exportSupplierComboBox = new JComboBox<>(supplierService.getAllSupplierNames().toArray(new String[0]));
         rightPanel.add(exportSupplierComboBox);
 
-        rightPanel.add(new JLabel("Fornecedor para Pedido PDF:"));
+        rightPanel.add(new JLabel("Gerar Pedido PDF:"));
         pdfSupplierComboBox = new JComboBox<>(supplierService.getAllSupplierNames().toArray(new String[0]));
         rightPanel.add(pdfSupplierComboBox);
 
