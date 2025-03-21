@@ -1,6 +1,6 @@
 # SistemaCompras
 # Descrição
-O Sistemade Compras é uma aplicação Java desenvolvida para gerenciar compras de itens, permitindo o cadastro de empresas, fornecedores e itens, além de funcionalidades para filtrar, exportar e gerar relatórios. A aplicação foi projetada para ser uma ferramenta prática para empresas que precisam organizar suas compras, com suporte a banco de dados SQLite, exportação para Excel e geração de pedidos em PDF.
+O Sistema de Compras é uma aplicação Java desenvolvida para gerenciar compras de itens, permitindo o cadastro de empresas, fornecedores e itens, além de funcionalidades para filtrar, exportar e gerar relatórios. A aplicação foi projetada para ser uma ferramenta prática para empresas que precisam organizar suas compras, com suporte a banco de dados SQLite, exportação para Excel e geração de pedidos em PDF.
 
 Este projeto foi desenvolvido como parte de um exercício de programação, utilizando Java com a biblioteca Swing para a interface gráfica, Maven para gerenciamento de dependências e várias bibliotecas externas para funcionalidades específicas, como manipulação de Excel e PDF.
 
