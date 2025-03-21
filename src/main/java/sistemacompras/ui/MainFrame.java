@@ -1,5 +1,33 @@
 package sistemacompras.ui;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.util.List;
+
+import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
+
 import sistemacompras.model.Company;
 import sistemacompras.model.Item;
 import sistemacompras.model.Supplier;
@@ -9,22 +37,6 @@ import sistemacompras.service.SupplierService;
 import sistemacompras.util.DatabaseInitializer;
 import sistemacompras.util.ExcelGenerator;
 import sistemacompras.util.PDFGenerator;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.List;
-import sistemacompras.model.Item;
-import sistemacompras.model.Supplier;
-import sistemacompras.service.CompanyService;
-import sistemacompras.service.ItemService;
-import sistemacompras.service.SupplierService;
-import sistemacompras.util.DatabaseInitializer;
-import sistemacompras.util.ExcelGenerator;
-import sistemacompras.util.PDFGenerator;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.List;
 
 public class MainFrame extends JFrame {
     private final ItemService itemService = new ItemService();
@@ -45,7 +57,7 @@ public class MainFrame extends JFrame {
 
     private void initializeUI() {
         setTitle("Sistema de Compras");
-        setSize(1400, 800);
+        setSize(1370, 727);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
