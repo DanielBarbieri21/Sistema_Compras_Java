@@ -72,15 +72,15 @@ public class MainFrame extends JFrame {
         leftPanel.setOpaque(false);
 
         leftPanel.add(new JLabel("Descrição:"));
-        descriptionField = new JTextField(20);
+        descriptionField = new JTextField(5);
         leftPanel.add(descriptionField);
 
         leftPanel.add(new JLabel("Código:"));
-        codeField = new JTextField(20);
+        codeField = new JTextField(5);
         leftPanel.add(codeField);
 
         leftPanel.add(new JLabel("Marca:"));
-        brandField = new JTextField(20);
+        brandField = new JTextField(5);
         leftPanel.add(brandField);
 
         leftPanel.add(new JLabel("Fornecedor:"));
@@ -88,11 +88,11 @@ public class MainFrame extends JFrame {
         leftPanel.add(supplierComboBox);
 
         leftPanel.add(new JLabel("Preço:"));
-        priceField = new JTextField(20);
+        priceField = new JTextField(5);
         leftPanel.add(priceField);
 
         leftPanel.add(new JLabel("Quantidade:"));
-        quantityField = new JTextField(20);
+        quantityField = new JTextField(5);
         leftPanel.add(quantityField);
 
         JButton addButton = new JButton("Adicionar Item");
@@ -223,33 +223,32 @@ public class MainFrame extends JFrame {
     }
 
     private void markAsPurchased() {
-        int[] selected = itemList.getSelectedIndices();
-        if (selected.length == 0) {
-            JOptionPane.showMessageDialog(this, "Selecione um item!", "Erro", JOptionPane.ERROR_MESSAGE);
+        int[] selectedIndices = itemList.getSelectedIndices();
+        if (selectedIndices.length == 0) {
+            JOptionPane.showMessageDialog(this, "Selecione pelo menos um item!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        for (int index : selected) {
+        for (int index : selectedIndices) {
             Item item = itemService.getAllItems().get(index);
             item.setStatus("Comprado");
             itemService.updateItem(item);
         }
         updateItemList(itemService.getAllItems());
     }
-
+    
     private void markAsPartiallyPurchased() {
-        int[] selected = itemList.getSelectedIndices();
-        if (selected.length == 0) {
-            JOptionPane.showMessageDialog(this, "Selecione um item!", "Erro", JOptionPane.ERROR_MESSAGE);
+        int[] selectedIndices = itemList.getSelectedIndices();
+        if (selectedIndices.length == 0) {
+            JOptionPane.showMessageDialog(this, "Selecione pelo menos um item!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        for (int index : selected) {
+        for (int index : selectedIndices) {
             Item item = itemService.getAllItems().get(index);
             item.setStatus("Parcialmente Comprado");
             itemService.updateItem(item);
         }
         updateItemList(itemService.getAllItems());
     }
-
     private void filterItems() {
         String status = (String) statusFilterComboBox.getSelectedItem();
         String supplier = (String) supplierFilterComboBox.getSelectedItem();
